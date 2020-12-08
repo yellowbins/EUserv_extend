@@ -128,12 +128,12 @@ if __name__ == "__main__":
         #print("检测到第 {} 个账号有 {} 台VPS，正在尝试续期".format(i + 1, len(SERVERS)))
         for k, v in SERVERS.items():
             if v:
-                if not renew(sessid, passwd_list[i], k):
+                if not renew(sessid, s, passwd_list[i], k):
                     print("ServerID:  Renew Error!" % k)
                 else:
                     print("ServerID:  has been successfully renewed!" % k)
-            else:
-                print("ServerID:  does not need to be renewed" % k)
+                else:
+                    print("ServerID:  does not need to be renewed" % k)
         time.sleep(15)
         check(sessid, s)
         time.sleep(5)
