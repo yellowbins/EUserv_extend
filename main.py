@@ -119,13 +119,13 @@ if __name__ == "__main__":
         exit(1)
     for i in range(len(user_list)):
         print('*' * 30)
-        print("正在续费第 %d 个账号" % (i + 1))
+        #print("正在续费第 %d 个账号" % (i + 1))
         sessid, s = login(user_list[i], passwd_list[i])
         if sessid == '-1':
             print("第 %d 个账号登陆失败，请检查登录信息" % (i + 1))
             continue
         SERVERS = get_servers(sessid, s)
-        print("检测到第 {} 个账号有 {} 台VPS，正在尝试续期".format(i + 1, len(SERVERS)))
+        #print("检测到第 {} 个账号有 {} 台VPS，正在尝试续期".format(i + 1, len(SERVERS)))
         for k, v in SERVERS.items():
             if v:
                 if not renew(sessid, s, passwd_list[i], k):
