@@ -132,8 +132,8 @@ if __name__ == "__main__":
                     print("ServerID:  Renew Error!" % k)
                 else:
                     print("ServerID:  has been successfully renewed!" % k)
-                else:
-                    print("ServerID:  does not need to be renewed" % k)
+            else:
+                print("ServerID:  does not need to be renewed" % k)
         time.sleep(15)
         check(sessid, s)
         time.sleep(5)
